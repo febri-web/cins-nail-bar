@@ -1,22 +1,73 @@
 
-<!DOCTYPE html>
-<html lang="id">
+<!doctype html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cin's Nail Bar</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cins Nail Bar — Booking</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="firebase-config-sample.js"></script>
+  <!-- Firebase SDKs (placeholders) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
 </head>
 <body>
-    <header>
-        <h1>💅 Selamat Datang di Cin's Nail Bar</h1>
-        <p>Sistem Manajemen & Booking Online</p>
-    </header>
-    <main>
-        <a href="#">Booking Sekarang</a>
-    </main>
-    <footer>
-        <p>© 2025 Cin's Nail Bar | Dibuat oleh Moh Febri Kurniawan</p>
-    </footer>
+  <header class="hero">
+    <div class="container">
+      <img src="assets/logo.png" alt="Cins Nail Bar" class="logo"/>
+      <h1>Cins Nail Bar</h1>
+      <p class="tagline">Professional nail art & care. Book online — fast & easy.</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="booking-section">
+      <h2>Booking Publik</h2>
+      <form id="booking-form">
+        <label>Nama Lengkap<input type="text" id="name" required></label>
+        <label>WhatsApp / Phone<input type="text" id="phone" required></label>
+        <label>Tanggal<input type="date" id="date" required></label>
+        <label>Waktu<input type="time" id="time" required></label>
+        <label>Layanan
+          <select id="service" required>
+            <option value="">Pilih layanan</option>
+            <optgroup label="Main Services">
+              <option value="Basic Nail Gel|65000">Basic Nail Gel - 65K</option>
+              <option value="Basic Nail Tip Premium|100000">Basic Nail Tip Premium - 100K</option>
+              <option value="Gradasi / Ombre|50000">Gradasi / Ombre - +50K</option>
+            </optgroup>
+            <optgroup label="Add-ons">
+              <option value="Builder Gel BIAB|35000">Builder Gel (BIAB) - 35K</option>
+              <option value="Art / Sticker per nail|5000">Art / Sticker - per nail</option>
+            </optgroup>
+          </select>
+        </label>
+        <label>Nail Artist
+          <select id="artist">
+            <option value="Citra Wulan Suci">Citra Wulan Suci</option>
+          </select>
+        </label>
+        <label>Catatan<textarea id="notes"></textarea></label>
+        <div class="actions">
+          <button type="submit" id="bookBtn">Kirim Booking</button>
+          <a class="btn secondary" href="admin.html">Login Admin</a>
+        </div>
+      </form>
+      <div id="booking-msg" class="msg"></div>
+    </section>
+
+    <section id="info">
+      <h3>Informasi</h3>
+      <p>Lokasi: (Depan Alfamart Srono) Srono, Kebaman, Kec. Srono, Banyuwangi, Jawa Timur 6847</p>
+      <p>WA: 0821-2454-2447 | IG: @cins_nailbar</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 Cins Nail Bar — Dibuat oleh Moh Febri Kurniawan</div>
+  </footer>
+
+  <script src="booking.js"></script>
 </body>
 </html>

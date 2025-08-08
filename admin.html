@@ -1,0 +1,55 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cins Nail Bar — Admin</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="firebase-config-sample.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+</head>
+<body>
+  <header class="hero small">
+    <div class="container">
+      <img src="assets/logo.png" alt="Cins Nail Bar" class="logo"/>
+      <h1>Dashboard Admin</h1>
+    </div>
+  </header>
+
+  <main class="container admin">
+    <section id="loginBox">
+      <h2>Login Admin / Resepsionis</h2>
+      <form id="login-form">
+        <label>Email<input type="email" id="email" required></label>
+        <label>Password<input type="password" id="password" required></label>
+        <div class="actions"><button type="submit">Login</button></div>
+      </form>
+      <div id="login-msg" class="msg"></div>
+    </section>
+
+    <section id="dashboard" style="display:none">
+      <h2>Overview</h2>
+      <div class="grid">
+        <div class="card"><h3>Total Booking (This Month)</h3><div id="total-booking">-</div></div>
+        <div class="card"><h3>Total Revenue</h3><div id="total-revenue">-</div></div>
+        <div class="card"><h3>Active Loyalty</h3><div id="active-loyalty">-</div></div>
+      </div>
+
+      <h3>Booking List</h3>
+      <table id="booking-table">
+        <thead><tr><th>Tanggal</th><th>Nama</th><th>Service</th><th>Artist</th><th>Phone</th><th>Status</th></tr></thead>
+        <tbody></tbody>
+      </table>
+
+      <h3>Customer CRM</h3>
+      <table id="crm-table"><thead><tr><th>Nama</th><th>Phone</th><th>Last Visit</th><th>Visits</th></tr></thead><tbody></tbody></table>
+      <div class="actions"><button id="logoutBtn">Logout</button></div>
+    </section>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
